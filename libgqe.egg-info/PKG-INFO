@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: libgqe
+Version: 0.0.1
+Summary: A library for interfacing device units made by GQ Electronics LLC
+Home-page: https://github.com/bernardn
+Author: Bernard Nauwelaerts
+Author-email: 
+License: GPL v2
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.5

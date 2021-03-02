@@ -17,6 +17,7 @@ if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth F
 """
 
 from _io import TextIOWrapper
+from io import StringIO, BytesIO
 
 __all__ = [
     'bmp', 'csv', 'json', 'pbm', 'raw', 'txt'
@@ -39,6 +40,7 @@ class Format:
 
     def write(self, data):
         """Write data to IO"""
+
         if data:
             try:
                 _io = self._get_io(type(data))
@@ -54,6 +56,8 @@ class Format:
             return self.out_file_io
 
         if isinstance(self.out_file, TextIOWrapper):
+            self.out_file_io = self.out_file
+        elif isinstance(self.out_file, StringIO):
             self.out_file_io = self.out_file
         elif isinstance(self.out_file, str):
             mode = 'w'
